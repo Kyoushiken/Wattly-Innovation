@@ -1,0 +1,382 @@
+
+:root {
+    --paper: #faf6ee;
+    --ink: #1c2b24;
+    --muted: #58655d;
+    --green: #1f4d3a;
+    --green-light: #2f7a58;
+    --sage: #e3ebe2;
+    --accent: #e5902f;
+    --accent-dark: #c97616;
+    --line: #ddd6c6;
+    --white: #ffffff;
+}
+
+/* ---------- Base ---------- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    color: var(--ink);
+    background-color: var(--paper);
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.15;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* ---------- Header ---------- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--paper);
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: var(--green);
+    text-decoration: none;
+}
+
+.logo::before {
+    content: "";
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-right: 0.5rem;
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+
+nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    color: var(--green-light);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3rem;
+}
+
+
+section {
+    padding: 4.5rem max(1.5rem, calc((100% - 64rem) / 2));
+}
+
+section h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+    margin: 0 0 0.75rem;
+}
+
+.problem-description,
+.how-description,
+.prototype-description,
+.pricing-description,
+.faq-description,
+.waitlist-description {
+    max-width: 40rem;
+    margin: 0 0 2.5rem;
+    font-size: 1.1rem;
+    color: var(--muted);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    letter-spacing: -0.02em;
+    margin: 0 0 1.25rem;
+}
+
+.hero p {
+    max-width: 34rem;
+    margin: 0 0 1.5rem;
+    font-size: 1.15rem;
+    color: var(--muted);
+}
+
+.hero img {
+    justify-self: center;
+    width: auto;
+    max-height: 32rem;
+    aspect-ratio: 457 / 937;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: 1.5rem;
+    
+    box-shadow: 0.75rem 0.75rem 0 var(--line);
+}
+
+/* ---------- Buttons ---------- */
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--green);
+    color: var(--paper);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: var(--green-light);
+}
+
+/* ---------- Cards ---------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--white);
+    padding: 1.75rem;
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--accent);
+    border-radius: 0.4rem;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+    color: var(--green);
+}
+
+.card p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.card img {
+    width: auto;
+    max-height: 14rem;
+    margin: 0 auto 1rem;
+    border-radius: 0.6rem;
+}
+
+/* ---------- Problem section (dark) ---------- */
+.problem {
+    background-color: var(--green);
+    color: var(--paper);
+}
+
+.problem .problem-description {
+    color: #cfe0d4;
+}
+
+/* ---------- Prototype screens ---------- */
+.prototype {
+    background-color: var(--white);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.prototype-interaction {
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.prototype-note {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+.screens {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.screens figure {
+    margin: 0;
+    text-align: center;
+}
+
+.screens img {
+    width: 100%;
+    max-width: 15rem;
+    margin: 0 auto;
+    aspect-ratio: 457 / 937;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    box-shadow: 0 6px 18px rgba(28, 43, 36, 0.12);
+}
+
+figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+/* ---------- Comparison table ---------- */
+.compare {
+    background-color: var(--sage);
+}
+
+.table-wrap {
+    overflow-x: auto;
+    background-color: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 0.4rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+}
+
+th {
+    background-color: var(--green);
+    color: var(--paper);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+tr:last-child td {
+    border-bottom: 0;
+}
+
+td:last-child {
+    background-color: #f3f8f2;
+    font-weight: 600;
+}
+
+/* ---------- Pricing ---------- */
+.pricing-note {
+    margin: -1.75rem 0 2rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
+.pricing .card:first-child {
+    box-shadow: 0 0 0 2px var(--green);
+}
+
+/* ---------- Waitlist ---------- */
+.waitlist {
+    background-color: var(--green);
+    color: var(--paper);
+    text-align: center;
+}
+
+.waitlist .waitlist-description {
+    margin-left: auto;
+    margin-right: auto;
+    color: #cfe0d4;
+}
+
+.waitlist form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.waitlist input {
+    flex: 1 1 16rem;
+    max-width: 22rem;
+    padding: 0.8rem 1rem;
+    font: inherit;
+    border: 2px solid transparent;
+    border-radius: 0.4rem;
+}
+
+.waitlist .button,
+.waitlist button {
+    margin: 0.25rem;
+    padding: 0.8rem 1.5rem;
+    font: inherit;
+    font-weight: 600;
+    background-color: var(--accent);
+    color: var(--ink);
+    border: 2px solid var(--accent);
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.waitlist .button:hover,
+.waitlist button:hover {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+/* Second button is the outline style */
+.waitlist .button + .button,
+.waitlist button + button {
+    background-color: transparent;
+    color: var(--paper);
+    border-color: var(--paper);
+}
+
+.waitlist .button + .button:hover,
+.waitlist button + button:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    background-color: var(--ink);
+    color: #c9d3cd;
+}
+
+footer p {
+    margin: 0;
+}
